@@ -1,0 +1,3004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex de Kanto</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://example.com/background.jpg');  
+            background-size: cover;
+            background-position: center;
+            margin: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel {
+            background-color: rgba(52, 73, 94, 0.85);  
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-item img {
+            max-height: 400px;
+            object-fit: contain;
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            position: static;
+            color: #fff;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #3498db;  
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .pokemon-details {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .pokemon-details h6 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #e67e22;
+        }
+
+        .pokemon-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pokemon-details ul li {
+            margin-bottom: 5px;
+        }
+
+        .pokemon-details ul li i {
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        .pokemon-section {
+            background-color: rgba(0, 0, 0, 0.5);  
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pokédex de Kanto</h1>
+        <p><strong>Descrição (fr):</strong> Pokédex régional de Kanto dans Rouge/Bleu/Jaune</p>
+        <p><strong>Idioma:</strong> <a href="https://pokeapi.co/api/v2/language/5/">fr</a></p>
+
+        
+        <div id="pokemonCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" class="d-block w-100" alt="bulbasaur">
+                        <div class="carousel-caption d-md-block">
+                            <h5>bulbasaur</h5>
+                            <p>Número: 1</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 6.9 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: overgrow, chlorophyll</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" class="d-block w-100" alt="ivysaur">
+                        <div class="carousel-caption d-md-block">
+                            <h5>ivysaur</h5>
+                            <p>Número: 2</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 13 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: overgrow, chlorophyll</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png" class="d-block w-100" alt="venusaur">
+                        <div class="carousel-caption d-md-block">
+                            <h5>venusaur</h5>
+                            <p>Número: 3</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 100 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: overgrow, chlorophyll</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" class="d-block w-100" alt="charmander">
+                        <div class="carousel-caption d-md-block">
+                            <h5>charmander</h5>
+                            <p>Número: 4</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 8.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: blaze, solar-power</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" class="d-block w-100" alt="charmeleon">
+                        <div class="carousel-caption d-md-block">
+                            <h5>charmeleon</h5>
+                            <p>Número: 5</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 19 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: blaze, solar-power</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" class="d-block w-100" alt="charizard">
+                        <div class="carousel-caption d-md-block">
+                            <h5>charizard</h5>
+                            <p>Número: 6</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 90.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: blaze, solar-power</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png" class="d-block w-100" alt="squirtle">
+                        <div class="carousel-caption d-md-block">
+                            <h5>squirtle</h5>
+                            <p>Número: 7</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 9 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: torrent, rain-dish</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png" class="d-block w-100" alt="wartortle">
+                        <div class="carousel-caption d-md-block">
+                            <h5>wartortle</h5>
+                            <p>Número: 8</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 22.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: torrent, rain-dish</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png" class="d-block w-100" alt="blastoise">
+                        <div class="carousel-caption d-md-block">
+                            <h5>blastoise</h5>
+                            <p>Número: 9</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 85.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: torrent, rain-dish</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png" class="d-block w-100" alt="caterpie">
+                        <div class="carousel-caption d-md-block">
+                            <h5>caterpie</h5>
+                            <p>Número: 10</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 2.9 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: shield-dust, run-away</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png" class="d-block w-100" alt="metapod">
+                        <div class="carousel-caption d-md-block">
+                            <h5>metapod</h5>
+                            <p>Número: 11</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 9.9 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: shed-skin</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png" class="d-block w-100" alt="butterfree">
+                        <div class="carousel-caption d-md-block">
+                            <h5>butterfree</h5>
+                            <p>Número: 12</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 32 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: compound-eyes, tinted-lens</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/13.png" class="d-block w-100" alt="weedle">
+                        <div class="carousel-caption d-md-block">
+                            <h5>weedle</h5>
+                            <p>Número: 13</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 3.2 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: shield-dust, run-away</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png" class="d-block w-100" alt="kakuna">
+                        <div class="carousel-caption d-md-block">
+                            <h5>kakuna</h5>
+                            <p>Número: 14</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 10 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: shed-skin</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png" class="d-block w-100" alt="beedrill">
+                        <div class="carousel-caption d-md-block">
+                            <h5>beedrill</h5>
+                            <p>Número: 15</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 29.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swarm, sniper</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png" class="d-block w-100" alt="pidgey">
+                        <div class="carousel-caption d-md-block">
+                            <h5>pidgey</h5>
+                            <p>Número: 16</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 1.8 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: keen-eye, tangled-feet, big-pecks</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png" class="d-block w-100" alt="pidgeotto">
+                        <div class="carousel-caption d-md-block">
+                            <h5>pidgeotto</h5>
+                            <p>Número: 17</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 30 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: keen-eye, tangled-feet, big-pecks</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png" class="d-block w-100" alt="pidgeot">
+                        <div class="carousel-caption d-md-block">
+                            <h5>pidgeot</h5>
+                            <p>Número: 18</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 39.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: keen-eye, tangled-feet, big-pecks</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png" class="d-block w-100" alt="rattata">
+                        <div class="carousel-caption d-md-block">
+                            <h5>rattata</h5>
+                            <p>Número: 19</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 3.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: run-away, guts, hustle</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png" class="d-block w-100" alt="raticate">
+                        <div class="carousel-caption d-md-block">
+                            <h5>raticate</h5>
+                            <p>Número: 20</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 18.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: run-away, guts, hustle</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png" class="d-block w-100" alt="spearow">
+                        <div class="carousel-caption d-md-block">
+                            <h5>spearow</h5>
+                            <p>Número: 21</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 2 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: keen-eye, sniper</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/22.png" class="d-block w-100" alt="fearow">
+                        <div class="carousel-caption d-md-block">
+                            <h5>fearow</h5>
+                            <p>Número: 22</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 38 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: keen-eye, sniper</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png" class="d-block w-100" alt="ekans">
+                        <div class="carousel-caption d-md-block">
+                            <h5>ekans</h5>
+                            <p>Número: 23</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 6.9 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: intimidate, shed-skin, unnerve</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png" class="d-block w-100" alt="arbok">
+                        <div class="carousel-caption d-md-block">
+                            <h5>arbok</h5>
+                            <p>Número: 24</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 65 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 3.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: intimidate, shed-skin, unnerve</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" class="d-block w-100" alt="pikachu">
+                        <div class="carousel-caption d-md-block">
+                            <h5>pikachu</h5>
+                            <p>Número: 25</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: static, lightning-rod</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: electric</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png" class="d-block w-100" alt="raichu">
+                        <div class="carousel-caption d-md-block">
+                            <h5>raichu</h5>
+                            <p>Número: 26</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 30 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: static, lightning-rod</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: electric</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/27.png" class="d-block w-100" alt="sandshrew">
+                        <div class="carousel-caption d-md-block">
+                            <h5>sandshrew</h5>
+                            <p>Número: 27</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 12 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: sand-veil, sand-rush</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/28.png" class="d-block w-100" alt="sandslash">
+                        <div class="carousel-caption d-md-block">
+                            <h5>sandslash</h5>
+                            <p>Número: 28</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 29.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: sand-veil, sand-rush</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/29.png" class="d-block w-100" alt="nidoran-f">
+                        <div class="carousel-caption d-md-block">
+                            <h5>nidoran-f</h5>
+                            <p>Número: 29</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 7 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: poison-point, rivalry, hustle</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/30.png" class="d-block w-100" alt="nidorina">
+                        <div class="carousel-caption d-md-block">
+                            <h5>nidorina</h5>
+                            <p>Número: 30</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 20 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: poison-point, rivalry, hustle</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/31.png" class="d-block w-100" alt="nidoqueen">
+                        <div class="carousel-caption d-md-block">
+                            <h5>nidoqueen</h5>
+                            <p>Número: 31</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 60 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: poison-point, rivalry, sheer-force</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison, ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/32.png" class="d-block w-100" alt="nidoran-m">
+                        <div class="carousel-caption d-md-block">
+                            <h5>nidoran-m</h5>
+                            <p>Número: 32</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 9 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: poison-point, rivalry, hustle</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/33.png" class="d-block w-100" alt="nidorino">
+                        <div class="carousel-caption d-md-block">
+                            <h5>nidorino</h5>
+                            <p>Número: 33</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 19.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.9 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: poison-point, rivalry, hustle</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/34.png" class="d-block w-100" alt="nidoking">
+                        <div class="carousel-caption d-md-block">
+                            <h5>nidoking</h5>
+                            <p>Número: 34</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 62 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: poison-point, rivalry, sheer-force</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison, ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/35.png" class="d-block w-100" alt="clefairy">
+                        <div class="carousel-caption d-md-block">
+                            <h5>clefairy</h5>
+                            <p>Número: 35</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 7.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: cute-charm, magic-guard, friend-guard</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fairy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/36.png" class="d-block w-100" alt="clefable">
+                        <div class="carousel-caption d-md-block">
+                            <h5>clefable</h5>
+                            <p>Número: 36</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 40 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: cute-charm, magic-guard, unaware</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fairy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/37.png" class="d-block w-100" alt="vulpix">
+                        <div class="carousel-caption d-md-block">
+                            <h5>vulpix</h5>
+                            <p>Número: 37</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 9.9 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: flash-fire, drought</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png" class="d-block w-100" alt="ninetales">
+                        <div class="carousel-caption d-md-block">
+                            <h5>ninetales</h5>
+                            <p>Número: 38</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 19.9 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: flash-fire, drought</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png" class="d-block w-100" alt="jigglypuff">
+                        <div class="carousel-caption d-md-block">
+                            <h5>jigglypuff</h5>
+                            <p>Número: 39</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 5.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: cute-charm, competitive, friend-guard</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, fairy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/40.png" class="d-block w-100" alt="wigglytuff">
+                        <div class="carousel-caption d-md-block">
+                            <h5>wigglytuff</h5>
+                            <p>Número: 40</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 12 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: cute-charm, competitive, frisk</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, fairy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/41.png" class="d-block w-100" alt="zubat">
+                        <div class="carousel-caption d-md-block">
+                            <h5>zubat</h5>
+                            <p>Número: 41</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 7.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: inner-focus, infiltrator</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/42.png" class="d-block w-100" alt="golbat">
+                        <div class="carousel-caption d-md-block">
+                            <h5>golbat</h5>
+                            <p>Número: 42</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 55 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: inner-focus, infiltrator</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/43.png" class="d-block w-100" alt="oddish">
+                        <div class="carousel-caption d-md-block">
+                            <h5>oddish</h5>
+                            <p>Número: 43</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 5.4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: chlorophyll, run-away</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/44.png" class="d-block w-100" alt="gloom">
+                        <div class="carousel-caption d-md-block">
+                            <h5>gloom</h5>
+                            <p>Número: 44</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 8.6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: chlorophyll, stench</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/45.png" class="d-block w-100" alt="vileplume">
+                        <div class="carousel-caption d-md-block">
+                            <h5>vileplume</h5>
+                            <p>Número: 45</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 18.6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: chlorophyll, effect-spore</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/46.png" class="d-block w-100" alt="paras">
+                        <div class="carousel-caption d-md-block">
+                            <h5>paras</h5>
+                            <p>Número: 46</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 5.4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: effect-spore, dry-skin, damp</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug, grass</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/47.png" class="d-block w-100" alt="parasect">
+                        <div class="carousel-caption d-md-block">
+                            <h5>parasect</h5>
+                            <p>Número: 47</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 29.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: effect-spore, dry-skin, damp</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug, grass</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/48.png" class="d-block w-100" alt="venonat">
+                        <div class="carousel-caption d-md-block">
+                            <h5>venonat</h5>
+                            <p>Número: 48</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 30 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: compound-eyes, tinted-lens, run-away</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/49.png" class="d-block w-100" alt="venomoth">
+                        <div class="carousel-caption d-md-block">
+                            <h5>venomoth</h5>
+                            <p>Número: 49</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 12.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: shield-dust, tinted-lens, wonder-skin</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/50.png" class="d-block w-100" alt="diglett">
+                        <div class="carousel-caption d-md-block">
+                            <h5>diglett</h5>
+                            <p>Número: 50</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 0.8 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: sand-veil, arena-trap, sand-force</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png" class="d-block w-100" alt="dugtrio">
+                        <div class="carousel-caption d-md-block">
+                            <h5>dugtrio</h5>
+                            <p>Número: 51</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 33.3 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: sand-veil, arena-trap, sand-force</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png" class="d-block w-100" alt="meowth">
+                        <div class="carousel-caption d-md-block">
+                            <h5>meowth</h5>
+                            <p>Número: 52</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 4.2 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: pickup, technician, unnerve</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/53.png" class="d-block w-100" alt="persian">
+                        <div class="carousel-caption d-md-block">
+                            <h5>persian</h5>
+                            <p>Número: 53</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 32 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: limber, technician, unnerve</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/54.png" class="d-block w-100" alt="psyduck">
+                        <div class="carousel-caption d-md-block">
+                            <h5>psyduck</h5>
+                            <p>Número: 54</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 19.6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: damp, cloud-nine, swift-swim</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/55.png" class="d-block w-100" alt="golduck">
+                        <div class="carousel-caption d-md-block">
+                            <h5>golduck</h5>
+                            <p>Número: 55</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 76.6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: damp, cloud-nine, swift-swim</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/56.png" class="d-block w-100" alt="mankey">
+                        <div class="carousel-caption d-md-block">
+                            <h5>mankey</h5>
+                            <p>Número: 56</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 28 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: vital-spirit, anger-point, defiant</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fighting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/57.png" class="d-block w-100" alt="primeape">
+                        <div class="carousel-caption d-md-block">
+                            <h5>primeape</h5>
+                            <p>Número: 57</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 32 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: vital-spirit, anger-point, defiant</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fighting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/58.png" class="d-block w-100" alt="growlithe">
+                        <div class="carousel-caption d-md-block">
+                            <h5>growlithe</h5>
+                            <p>Número: 58</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 19 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: intimidate, flash-fire, justified</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png" class="d-block w-100" alt="arcanine">
+                        <div class="carousel-caption d-md-block">
+                            <h5>arcanine</h5>
+                            <p>Número: 59</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 155 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.9 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: intimidate, flash-fire, justified</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/60.png" class="d-block w-100" alt="poliwag">
+                        <div class="carousel-caption d-md-block">
+                            <h5>poliwag</h5>
+                            <p>Número: 60</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 12.4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: water-absorb, damp, swift-swim</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/61.png" class="d-block w-100" alt="poliwhirl">
+                        <div class="carousel-caption d-md-block">
+                            <h5>poliwhirl</h5>
+                            <p>Número: 61</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 20 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: water-absorb, damp, swift-swim</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/62.png" class="d-block w-100" alt="poliwrath">
+                        <div class="carousel-caption d-md-block">
+                            <h5>poliwrath</h5>
+                            <p>Número: 62</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 54 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: water-absorb, damp, swift-swim</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, fighting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/63.png" class="d-block w-100" alt="abra">
+                        <div class="carousel-caption d-md-block">
+                            <h5>abra</h5>
+                            <p>Número: 63</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 19.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.9 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: synchronize, inner-focus, magic-guard</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/64.png" class="d-block w-100" alt="kadabra">
+                        <div class="carousel-caption d-md-block">
+                            <h5>kadabra</h5>
+                            <p>Número: 64</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 56.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: synchronize, inner-focus, magic-guard</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png" class="d-block w-100" alt="alakazam">
+                        <div class="carousel-caption d-md-block">
+                            <h5>alakazam</h5>
+                            <p>Número: 65</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 48 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: synchronize, inner-focus, magic-guard</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/66.png" class="d-block w-100" alt="machop">
+                        <div class="carousel-caption d-md-block">
+                            <h5>machop</h5>
+                            <p>Número: 66</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 19.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: guts, no-guard, steadfast</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fighting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/67.png" class="d-block w-100" alt="machoke">
+                        <div class="carousel-caption d-md-block">
+                            <h5>machoke</h5>
+                            <p>Número: 67</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 70.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: guts, no-guard, steadfast</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fighting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/68.png" class="d-block w-100" alt="machamp">
+                        <div class="carousel-caption d-md-block">
+                            <h5>machamp</h5>
+                            <p>Número: 68</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 130 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: guts, no-guard, steadfast</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fighting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/69.png" class="d-block w-100" alt="bellsprout">
+                        <div class="carousel-caption d-md-block">
+                            <h5>bellsprout</h5>
+                            <p>Número: 69</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: chlorophyll, gluttony</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/70.png" class="d-block w-100" alt="weepinbell">
+                        <div class="carousel-caption d-md-block">
+                            <h5>weepinbell</h5>
+                            <p>Número: 70</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 6.4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: chlorophyll, gluttony</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/71.png" class="d-block w-100" alt="victreebel">
+                        <div class="carousel-caption d-md-block">
+                            <h5>victreebel</h5>
+                            <p>Número: 71</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 15.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: chlorophyll, gluttony</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/72.png" class="d-block w-100" alt="tentacool">
+                        <div class="carousel-caption d-md-block">
+                            <h5>tentacool</h5>
+                            <p>Número: 72</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 45.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.9 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: clear-body, liquid-ooze, rain-dish</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/73.png" class="d-block w-100" alt="tentacruel">
+                        <div class="carousel-caption d-md-block">
+                            <h5>tentacruel</h5>
+                            <p>Número: 73</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 55 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: clear-body, liquid-ooze, rain-dish</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/74.png" class="d-block w-100" alt="geodude">
+                        <div class="carousel-caption d-md-block">
+                            <h5>geodude</h5>
+                            <p>Número: 74</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 20 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: rock-head, sturdy, sand-veil</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: rock, ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/75.png" class="d-block w-100" alt="graveler">
+                        <div class="carousel-caption d-md-block">
+                            <h5>graveler</h5>
+                            <p>Número: 75</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 105 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: rock-head, sturdy, sand-veil</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: rock, ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/76.png" class="d-block w-100" alt="golem">
+                        <div class="carousel-caption d-md-block">
+                            <h5>golem</h5>
+                            <p>Número: 76</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 300 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: rock-head, sturdy, sand-veil</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: rock, ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/77.png" class="d-block w-100" alt="ponyta">
+                        <div class="carousel-caption d-md-block">
+                            <h5>ponyta</h5>
+                            <p>Número: 77</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 30 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: run-away, flash-fire, flame-body</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/78.png" class="d-block w-100" alt="rapidash">
+                        <div class="carousel-caption d-md-block">
+                            <h5>rapidash</h5>
+                            <p>Número: 78</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 95 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: run-away, flash-fire, flame-body</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/79.png" class="d-block w-100" alt="slowpoke">
+                        <div class="carousel-caption d-md-block">
+                            <h5>slowpoke</h5>
+                            <p>Número: 79</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 36 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: oblivious, own-tempo, regenerator</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png" class="d-block w-100" alt="slowbro">
+                        <div class="carousel-caption d-md-block">
+                            <h5>slowbro</h5>
+                            <p>Número: 80</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 78.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: oblivious, own-tempo, regenerator</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/81.png" class="d-block w-100" alt="magnemite">
+                        <div class="carousel-caption d-md-block">
+                            <h5>magnemite</h5>
+                            <p>Número: 81</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: magnet-pull, sturdy, analytic</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: electric, steel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/82.png" class="d-block w-100" alt="magneton">
+                        <div class="carousel-caption d-md-block">
+                            <h5>magneton</h5>
+                            <p>Número: 82</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 60 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: magnet-pull, sturdy, analytic</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: electric, steel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/83.png" class="d-block w-100" alt="farfetchd">
+                        <div class="carousel-caption d-md-block">
+                            <h5>farfetchd</h5>
+                            <p>Número: 83</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 15 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: keen-eye, inner-focus, defiant</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/84.png" class="d-block w-100" alt="doduo">
+                        <div class="carousel-caption d-md-block">
+                            <h5>doduo</h5>
+                            <p>Número: 84</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 39.2 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: run-away, early-bird, tangled-feet</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/85.png" class="d-block w-100" alt="dodrio">
+                        <div class="carousel-caption d-md-block">
+                            <h5>dodrio</h5>
+                            <p>Número: 85</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 85.2 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: run-away, early-bird, tangled-feet</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/86.png" class="d-block w-100" alt="seel">
+                        <div class="carousel-caption d-md-block">
+                            <h5>seel</h5>
+                            <p>Número: 86</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 90 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: thick-fat, hydration, ice-body</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/87.png" class="d-block w-100" alt="dewgong">
+                        <div class="carousel-caption d-md-block">
+                            <h5>dewgong</h5>
+                            <p>Número: 87</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 120 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: thick-fat, hydration, ice-body</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, ice</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/88.png" class="d-block w-100" alt="grimer">
+                        <div class="carousel-caption d-md-block">
+                            <h5>grimer</h5>
+                            <p>Número: 88</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 30 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.9 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: stench, sticky-hold, poison-touch</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/89.png" class="d-block w-100" alt="muk">
+                        <div class="carousel-caption d-md-block">
+                            <h5>muk</h5>
+                            <p>Número: 89</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 30 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: stench, sticky-hold, poison-touch</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/90.png" class="d-block w-100" alt="shellder">
+                        <div class="carousel-caption d-md-block">
+                            <h5>shellder</h5>
+                            <p>Número: 90</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: shell-armor, skill-link, overcoat</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/91.png" class="d-block w-100" alt="cloyster">
+                        <div class="carousel-caption d-md-block">
+                            <h5>cloyster</h5>
+                            <p>Número: 91</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 132.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: shell-armor, skill-link, overcoat</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, ice</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/92.png" class="d-block w-100" alt="gastly">
+                        <div class="carousel-caption d-md-block">
+                            <h5>gastly</h5>
+                            <p>Número: 92</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 0.1 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: levitate</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ghost, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/93.png" class="d-block w-100" alt="haunter">
+                        <div class="carousel-caption d-md-block">
+                            <h5>haunter</h5>
+                            <p>Número: 93</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 0.1 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: levitate</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ghost, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png" class="d-block w-100" alt="gengar">
+                        <div class="carousel-caption d-md-block">
+                            <h5>gengar</h5>
+                            <p>Número: 94</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 40.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: cursed-body</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ghost, poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png" class="d-block w-100" alt="onix">
+                        <div class="carousel-caption d-md-block">
+                            <h5>onix</h5>
+                            <p>Número: 95</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 210 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 8.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: rock-head, sturdy, weak-armor</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: rock, ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/96.png" class="d-block w-100" alt="drowzee">
+                        <div class="carousel-caption d-md-block">
+                            <h5>drowzee</h5>
+                            <p>Número: 96</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 32.4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: insomnia, forewarn, inner-focus</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/97.png" class="d-block w-100" alt="hypno">
+                        <div class="carousel-caption d-md-block">
+                            <h5>hypno</h5>
+                            <p>Número: 97</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 75.6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: insomnia, forewarn, inner-focus</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/98.png" class="d-block w-100" alt="krabby">
+                        <div class="carousel-caption d-md-block">
+                            <h5>krabby</h5>
+                            <p>Número: 98</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 6.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: hyper-cutter, shell-armor, sheer-force</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/99.png" class="d-block w-100" alt="kingler">
+                        <div class="carousel-caption d-md-block">
+                            <h5>kingler</h5>
+                            <p>Número: 99</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 60 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: hyper-cutter, shell-armor, sheer-force</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/100.png" class="d-block w-100" alt="voltorb">
+                        <div class="carousel-caption d-md-block">
+                            <h5>voltorb</h5>
+                            <p>Número: 100</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 10.4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: soundproof, static, aftermath</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: electric</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/101.png" class="d-block w-100" alt="electrode">
+                        <div class="carousel-caption d-md-block">
+                            <h5>electrode</h5>
+                            <p>Número: 101</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 66.6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: soundproof, static, aftermath</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: electric</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/102.png" class="d-block w-100" alt="exeggcute">
+                        <div class="carousel-caption d-md-block">
+                            <h5>exeggcute</h5>
+                            <p>Número: 102</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 2.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: chlorophyll, harvest</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/103.png" class="d-block w-100" alt="exeggutor">
+                        <div class="carousel-caption d-md-block">
+                            <h5>exeggutor</h5>
+                            <p>Número: 103</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 120 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: chlorophyll, harvest</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass, psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/104.png" class="d-block w-100" alt="cubone">
+                        <div class="carousel-caption d-md-block">
+                            <h5>cubone</h5>
+                            <p>Número: 104</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 6.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: rock-head, lightning-rod, battle-armor</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/105.png" class="d-block w-100" alt="marowak">
+                        <div class="carousel-caption d-md-block">
+                            <h5>marowak</h5>
+                            <p>Número: 105</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 45 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: rock-head, lightning-rod, battle-armor</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ground</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/106.png" class="d-block w-100" alt="hitmonlee">
+                        <div class="carousel-caption d-md-block">
+                            <h5>hitmonlee</h5>
+                            <p>Número: 106</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 49.8 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: limber, reckless, unburden</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fighting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/107.png" class="d-block w-100" alt="hitmonchan">
+                        <div class="carousel-caption d-md-block">
+                            <h5>hitmonchan</h5>
+                            <p>Número: 107</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 50.2 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: keen-eye, iron-fist, inner-focus</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fighting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/108.png" class="d-block w-100" alt="lickitung">
+                        <div class="carousel-caption d-md-block">
+                            <h5>lickitung</h5>
+                            <p>Número: 108</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 65.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: own-tempo, oblivious, cloud-nine</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/109.png" class="d-block w-100" alt="koffing">
+                        <div class="carousel-caption d-md-block">
+                            <h5>koffing</h5>
+                            <p>Número: 109</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 1 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: levitate, neutralizing-gas, stench</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/110.png" class="d-block w-100" alt="weezing">
+                        <div class="carousel-caption d-md-block">
+                            <h5>weezing</h5>
+                            <p>Número: 110</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 9.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: levitate, neutralizing-gas, stench</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: poison</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/111.png" class="d-block w-100" alt="rhyhorn">
+                        <div class="carousel-caption d-md-block">
+                            <h5>rhyhorn</h5>
+                            <p>Número: 111</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 115 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: lightning-rod, rock-head, reckless</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ground, rock</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/112.png" class="d-block w-100" alt="rhydon">
+                        <div class="carousel-caption d-md-block">
+                            <h5>rhydon</h5>
+                            <p>Número: 112</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 120 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.9 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: lightning-rod, rock-head, reckless</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ground, rock</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/113.png" class="d-block w-100" alt="chansey">
+                        <div class="carousel-caption d-md-block">
+                            <h5>chansey</h5>
+                            <p>Número: 113</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 34.6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: natural-cure, serene-grace, healer</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/114.png" class="d-block w-100" alt="tangela">
+                        <div class="carousel-caption d-md-block">
+                            <h5>tangela</h5>
+                            <p>Número: 114</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 35 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: chlorophyll, leaf-guard, regenerator</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: grass</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/115.png" class="d-block w-100" alt="kangaskhan">
+                        <div class="carousel-caption d-md-block">
+                            <h5>kangaskhan</h5>
+                            <p>Número: 115</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 80 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 2.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: early-bird, scrappy, inner-focus</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/116.png" class="d-block w-100" alt="horsea">
+                        <div class="carousel-caption d-md-block">
+                            <h5>horsea</h5>
+                            <p>Número: 116</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 8 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swift-swim, sniper, damp</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/117.png" class="d-block w-100" alt="seadra">
+                        <div class="carousel-caption d-md-block">
+                            <h5>seadra</h5>
+                            <p>Número: 117</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 25 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: poison-point, sniper, damp</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/118.png" class="d-block w-100" alt="goldeen">
+                        <div class="carousel-caption d-md-block">
+                            <h5>goldeen</h5>
+                            <p>Número: 118</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 15 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swift-swim, water-veil, lightning-rod</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/119.png" class="d-block w-100" alt="seaking">
+                        <div class="carousel-caption d-md-block">
+                            <h5>seaking</h5>
+                            <p>Número: 119</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 39 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swift-swim, water-veil, lightning-rod</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/120.png" class="d-block w-100" alt="staryu">
+                        <div class="carousel-caption d-md-block">
+                            <h5>staryu</h5>
+                            <p>Número: 120</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 34.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: illuminate, natural-cure, analytic</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/121.png" class="d-block w-100" alt="starmie">
+                        <div class="carousel-caption d-md-block">
+                            <h5>starmie</h5>
+                            <p>Número: 121</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 80 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: illuminate, natural-cure, analytic</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/122.png" class="d-block w-100" alt="mr-mime">
+                        <div class="carousel-caption d-md-block">
+                            <h5>mr-mime</h5>
+                            <p>Número: 122</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 54.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: soundproof, filter, technician</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: psychic, fairy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/123.png" class="d-block w-100" alt="scyther">
+                        <div class="carousel-caption d-md-block">
+                            <h5>scyther</h5>
+                            <p>Número: 123</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 56 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swarm, technician, steadfast</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/124.png" class="d-block w-100" alt="jynx">
+                        <div class="carousel-caption d-md-block">
+                            <h5>jynx</h5>
+                            <p>Número: 124</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 40.6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: oblivious, forewarn, dry-skin</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ice, psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/125.png" class="d-block w-100" alt="electabuzz">
+                        <div class="carousel-caption d-md-block">
+                            <h5>electabuzz</h5>
+                            <p>Número: 125</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 30 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: static, vital-spirit</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: electric</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/126.png" class="d-block w-100" alt="magmar">
+                        <div class="carousel-caption d-md-block">
+                            <h5>magmar</h5>
+                            <p>Número: 126</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 44.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: flame-body, vital-spirit</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/127.png" class="d-block w-100" alt="pinsir">
+                        <div class="carousel-caption d-md-block">
+                            <h5>pinsir</h5>
+                            <p>Número: 127</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 55 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: hyper-cutter, mold-breaker, moxie</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: bug</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png" class="d-block w-100" alt="tauros">
+                        <div class="carousel-caption d-md-block">
+                            <h5>tauros</h5>
+                            <p>Número: 128</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 88.4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: intimidate, anger-point, sheer-force</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/129.png" class="d-block w-100" alt="magikarp">
+                        <div class="carousel-caption d-md-block">
+                            <h5>magikarp</h5>
+                            <p>Número: 129</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 10 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.9 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swift-swim, rattled</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png" class="d-block w-100" alt="gyarados">
+                        <div class="carousel-caption d-md-block">
+                            <h5>gyarados</h5>
+                            <p>Número: 130</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 235 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 6.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: intimidate, moxie</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png" class="d-block w-100" alt="lapras">
+                        <div class="carousel-caption d-md-block">
+                            <h5>lapras</h5>
+                            <p>Número: 131</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 220 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 2.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: water-absorb, shell-armor, hydration</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water, ice</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" class="d-block w-100" alt="ditto">
+                        <div class="carousel-caption d-md-block">
+                            <h5>ditto</h5>
+                            <p>Número: 132</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: limber, imposter</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png" class="d-block w-100" alt="eevee">
+                        <div class="carousel-caption d-md-block">
+                            <h5>eevee</h5>
+                            <p>Número: 133</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 6.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: run-away, adaptability, anticipation</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/134.png" class="d-block w-100" alt="vaporeon">
+                        <div class="carousel-caption d-md-block">
+                            <h5>vaporeon</h5>
+                            <p>Número: 134</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 29 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: water-absorb, hydration</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/135.png" class="d-block w-100" alt="jolteon">
+                        <div class="carousel-caption d-md-block">
+                            <h5>jolteon</h5>
+                            <p>Número: 135</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 24.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: volt-absorb, quick-feet</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: electric</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/136.png" class="d-block w-100" alt="flareon">
+                        <div class="carousel-caption d-md-block">
+                            <h5>flareon</h5>
+                            <p>Número: 136</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 25 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.9 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: flash-fire, guts</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/137.png" class="d-block w-100" alt="porygon">
+                        <div class="carousel-caption d-md-block">
+                            <h5>porygon</h5>
+                            <p>Número: 137</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 36.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: trace, download, analytic</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/138.png" class="d-block w-100" alt="omanyte">
+                        <div class="carousel-caption d-md-block">
+                            <h5>omanyte</h5>
+                            <p>Número: 138</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 7.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swift-swim, shell-armor, weak-armor</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: rock, water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/139.png" class="d-block w-100" alt="omastar">
+                        <div class="carousel-caption d-md-block">
+                            <h5>omastar</h5>
+                            <p>Número: 139</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 35 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swift-swim, shell-armor, weak-armor</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: rock, water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/140.png" class="d-block w-100" alt="kabuto">
+                        <div class="carousel-caption d-md-block">
+                            <h5>kabuto</h5>
+                            <p>Número: 140</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 11.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.5 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swift-swim, battle-armor, weak-armor</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: rock, water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/141.png" class="d-block w-100" alt="kabutops">
+                        <div class="carousel-caption d-md-block">
+                            <h5>kabutops</h5>
+                            <p>Número: 141</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 40.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.3 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: swift-swim, battle-armor, weak-armor</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: rock, water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/142.png" class="d-block w-100" alt="aerodactyl">
+                        <div class="carousel-caption d-md-block">
+                            <h5>aerodactyl</h5>
+                            <p>Número: 142</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 59 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: rock-head, pressure, unnerve</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: rock, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png" class="d-block w-100" alt="snorlax">
+                        <div class="carousel-caption d-md-block">
+                            <h5>snorlax</h5>
+                            <p>Número: 143</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 460 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 2.1 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: immunity, thick-fat, gluttony</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/144.png" class="d-block w-100" alt="articuno">
+                        <div class="carousel-caption d-md-block">
+                            <h5>articuno</h5>
+                            <p>Número: 144</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 55.4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.7 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: pressure, snow-cloak</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: ice, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/145.png" class="d-block w-100" alt="zapdos">
+                        <div class="carousel-caption d-md-block">
+                            <h5>zapdos</h5>
+                            <p>Número: 145</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 52.6 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.6 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: pressure, static</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: electric, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/146.png" class="d-block w-100" alt="moltres">
+                        <div class="carousel-caption d-md-block">
+                            <h5>moltres</h5>
+                            <p>Número: 146</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 60 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: pressure, flame-body</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: fire, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/147.png" class="d-block w-100" alt="dratini">
+                        <div class="carousel-caption d-md-block">
+                            <h5>dratini</h5>
+                            <p>Número: 147</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 3.3 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 1.8 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: shed-skin, marvel-scale</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: dragon</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/148.png" class="d-block w-100" alt="dragonair">
+                        <div class="carousel-caption d-md-block">
+                            <h5>dragonair</h5>
+                            <p>Número: 148</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 16.5 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: shed-skin, marvel-scale</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: dragon</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png" class="d-block w-100" alt="dragonite">
+                        <div class="carousel-caption d-md-block">
+                            <h5>dragonite</h5>
+                            <p>Número: 149</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 210 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 2.2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: inner-focus, multiscale</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: dragon, flying</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" class="d-block w-100" alt="mewtwo">
+                        <div class="carousel-caption d-md-block">
+                            <h5>mewtwo</h5>
+                            <p>Número: 150</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 122 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 2 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: pressure, unnerve</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item ">
+                    <div class="pokemon-section">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png" class="d-block w-100" alt="mew">
+                        <div class="carousel-caption d-md-block">
+                            <h5>mew</h5>
+                            <p>Número: 151</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: 4 kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: 0.4 m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: synchronize</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: psychic</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <a class="carousel-control-prev" href="#pokemonCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#pokemonCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

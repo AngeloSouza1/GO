@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex de Kanto</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://example.com/background.jpg'); /* URL da imagem de fundo para a página */
+            background-size: cover;
+            background-position: center;
+            margin: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel {
+            background-color: rgba(52, 73, 94, 0.85); /* Fundo do carrossel com opacidade */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-item img {
+            max-height: 400px;
+            object-fit: contain;
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            position: static;
+            color: #fff;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #3498db; /* Cor das setas */
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .pokemon-details {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .pokemon-details h6 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #e67e22;
+        }
+
+        .pokemon-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pokemon-details ul li {
+            margin-bottom: 5px;
+        }
+
+        .pokemon-details ul li i {
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        .pokemon-section {
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente específico para a seção do Pokémon */
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pokédex de Kanto</h1>
+        <p><strong>Descrição ({{ .Language }}):</strong> {{ .Description }}</p>
+        <p><strong>Idioma:</strong> <a href="{{ .LanguageURL }}">{{ .Language }}</a></p>
+
+        <!-- Carrossel -->
+        <div id="pokemonCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {{ range $index, $pokemon := .PokemonList }}
+                <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+                    <div class="pokemon-section">
+                        <img src="{{ $pokemon.ImageURL }}" class="d-block w-100" alt="{{ $pokemon.Name }}">
+                        <div class="carousel-caption d-md-block">
+                            <h5>{{ $pokemon.Name }}</h5>
+                            <p>Número: {{ $pokemon.EntryNumber }}</p>
+                            <div class="pokemon-details">
+                                <h6>Detalhes:</h6>
+                                <ul>
+                                    <li><i class="fas fa-weight"></i> Peso: {{ $pokemon.Weight }} kg</li>
+                                    <li><i class="fas fa-ruler-vertical"></i> Altura: {{ $pokemon.Height }} m</li>
+                                    <li><i class="fas fa-bolt"></i> Habilidades: {{ $pokemon.Abilities }}</li>
+                                    <li><i class="fas fa-fire"></i> Tipo: {{ $pokemon.Type }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            <a class="carousel-control-prev" href="#pokemonCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#pokemonCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
